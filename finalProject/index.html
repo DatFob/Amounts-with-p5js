@@ -1,20 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			div.banner_image.relative {
+			  position: relative;
+			  left: 30px;
+			  bottom: 40px;
+			}
+			</style>
 
-    <title>LinSanity</title>
+		<title>Lin Sanity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
 
-  </head>
-  <body>Mike Zhao</body>
-  <p>Use data visualization to tell our audiences about Jeremy Lin's peak performance during one of his regular seasons with the New York Knicks. Data will be collected for his 2012 NBA season when he went on a dominant streak at the time. 
-    Show Jeremy Lin's performance difference in a unique, user friendly way. Use numbers to convince users about Jeremy Lin’s streak, use visualization techniques to display dynamic/interactive contents to users.
-    Compare and emphasize performance statistics with top-tier NBA players (example Kobe Bryant) at the time to again emphasize on Jeremy Lin’s performance.
-    Show that there is an increase in social media posts related to Jeremy Lin using visualization techniques
-    Use a scrollytelling to increases user engagement / grab user's attention.
-    </p>
-    <p>Link to project design & alpha release <a href="https://github.com/DatFob/Amounts-with-p5js/blob/main/finalProject/projectPDF/projectProposal.pdf">Click Here</a>.</p>
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Lin Sanity</h1>
+							<p class="major"><a href="https://www.espn.com/nba/player/_/id/4299/jeremy-lin">Jeremy Lin</a> grew up in Palo Alto, California. People had always doubted him when he was a young boy. He was born to two Taiwanese immigrants, and when people looked at his foreign ethnicity, they, unfortunately, doubted that he could ever play basketball. Lin learned the game of basketball from his father, who would teach him at the local YMCA. Even though Lin seemed to have some natural ability, he wasn't tall, which was one reason why people wrote him off. However, Jeremy Lin's performance during 2011-2012 season in New York, changed their minds.</p>
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+							</ul>
+						</div>
+						<div class="banner_image">
+							<img src="images/banner.jpg" alt="" />
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+						<div class="content">
+							<h2>Competing with Stars</h2>
+							<p>In order to show Jeremy Lin's performance in the league, I created a stacked bar graph to compare Jeremy Lin with other top NBA players at the time such as Lebron James, Kobe Bryant (RIP) and Kevin Durant.</p>
+							<ul>
+								<li>Points / Game : On average, how many points a player scores in a game.</li>
+								<li>Rebounds : On average, how many rebounds a player grabs in a game.</li>
+								<li>Assits : On average, how many assits a player dishes out in a game</li>
+								<li>Efficiency: a composite basketball statistic that is derived from basic individual statistics: points, rebounds, assists, steals, blocks, turnovers, and shot attempts.</li>
+							  </ul>
+						</div>
+						<div id="two_viz"></div>
+					</section>
+					
+
+
+				<!-- Three -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Money and Fame</h2>
+							<p>New York Knicks isn't a top tier basketball team in the league. Therefore in 2006, the average ticket price is about 70$. However, we can see an increase in ticket price from 2010 to 2014 and a dramatically increase from 2010 - 2012. Lin Sanity happened during season 2011-2012 and it almost seems like such two events are correlated (they are).</p>
+							<p>A Klout score measures an individual's social media influence. Using an app from the company Klout, users can connect various social accounts such as Facebook, Flickr, YouTube, etc., and then provides every user with his or her Klout score. The score is based on a numerical value of 1 out of 100--the higher the score, the more influence an individual has on social media platforms. Just to give you guys an idea, some celebrity who had a klout score in 80 - 95 range are: </p>
+							<ul>
+								<li>Justin Bieber</li>
+								<li>Robert Scoble</li>
+								<li>Barack Obama</li>
+							  </ul>
+						</div>
+						<div id="my_dataviz"></div>
+					</section>
+
+				<!-- Four -->
+				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+					<div class="content">
+						<h2>Whose money?</h2>
+						<p>Though we just saw an increase in ticket price at the Madison Sqaure Garden. However, Increase in ticket price does not mean the players on the team will get a raise. Looking at the bubble chart on the right, the size of the circle indicates the amount of salary each player was earning. Yeah, it's ridiculous how little a player is paid when comparing to one of the super stars. Even though, they could be producing the same stats for their teams.</p>
+						
+					</div>
+					<div id="bubbles"></div>
+				</section>
+
+				<!-- Five -->
+					<section class="spotlight fullscreen style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Shot Chart</h2>
+							<p>Laslty, let's look at the shots Jeremy Lin took during his 2010-2011 and 2011-2012 season. The image on the right is his 2010-2011 season and the image on the left is the 2011-2012 Season. We can see that Jeremy is taking more shots as a player everywhere on the court. He has improved his play making, shot creation and shot taking as a better basketball player after his Lin Sanity period. It also emphasizes his importance to the team and coach's plays are evolving around him</p>
+						</div>
+						
+					</section>
+					<section class="image-position-right">
+						<img src="images/11.jpg" alt="" />
+						<img src="images/10.jpg" alt="" />
+					</section>
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+							</ul>
+							<p>&copy; Who made this: <a href="https://github.com/DatFob">Mike Zhao</a>.</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+			<script src="stars/index.js"></script>
+			<script src="line/index.js"></script>
+			<script src="bubbles/index.js"></script>
+
+
+	</body>
 </html>
