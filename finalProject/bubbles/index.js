@@ -62,7 +62,7 @@ d3.csv("bubbles/data.csv",  function(d) {
         .on("drag", dragged)
         .on("end", dragended))
       	.on('mouseover',function(d, i) {
-        		svg.append("text")
+        		svg2.append("text")
           	.attr("id", "moneyText")
             .attr("x", 550)
             .attr("y", 50)

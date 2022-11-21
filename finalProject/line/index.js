@@ -27,14 +27,13 @@ var data2 = [
 ];
 
 
-// append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", height + margin.top + margin.bottom + 300)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + "," + 250+ ")");
 
 
 var parseTime = d3.timeParse("%Y");
@@ -49,7 +48,6 @@ svg.append("g")
   .attr("transform", "translate(0," + height + ")")
   .attr("class","myXaxis")
 
-// Initialize an Y axis
 var y = d3.scaleLinear().range([height, 0]);
 var yAxis = d3.axisLeft().scale(y);
 svg.append("g")
@@ -130,7 +128,6 @@ function update(data) {
         .attr("offset", function(d) { return d.offset; })
         .attr("stop-color", function(d) { return d.color; });
     
-      // Updata the line
   	u.enter()
     .append("path")
     .attr("class","lineTest")
@@ -253,5 +250,4 @@ function kloudScoreSetup(){
   .style('fill', knicksOrange);
 }
 
-// At the beginning, I run the update function on the first dataset:
 update(data1)
