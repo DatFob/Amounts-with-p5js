@@ -6,14 +6,67 @@
 
     <title>A10</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    
   </head>
-
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   <body>
-    <p><b>Black Hat Covid Chart</b></p>
-    <img src="/assignment10/image/bh_covid.png" alt="">
-    <p>This is an example of misleading, poorly made with un-tested data. The bar chart suppose to display total covid cases out of one million population, the title is misleading itself. By looking at the chart, it almost seems like that Germany is having ten times as many covid cases as America. But this is not the case, this is caused by a poorly made x-Axis that starts at 280,000 but not 0. Therefore this bar chart is mainly showing the difference instead of the proportion of each country. It also doesn't tell the reader when was the data collected.</p>
-  </body>
+    <p><b>Part 1</b></p>
+    <a href="https://viz.wtf/image/627354703888547840">Bad/Misleading visualization</a>
+    <p>Why is this graph misleading?</p>
+    <ul>
+      <li>- The title isn’t clear, it misleads viewers to believe there are total three candidates running.</li>
+      <li>- The name of each candidate is incorrect</li>
+      <li>- The total number of percentage doesn’t adds up to 100%</li>
+      <li>- Untrusted source</li>
+    </ul>
+    <a href="https://vizhub.com/DatFob/09e8f3b2870f45caa38a555f2d9e45ed?edit=files&">A better visualization made in d3</a>
+    <p>Why this graph is much better</p>
+    <ul>
+      <li>- Changed the title to a straight, clear message</li>
+      <li>- Retrieved data from trustworthy resource</li>
+      <li>- Displayed real data accordingly, even with a pie chart we can see the top 5 candidates along with the percentage of the rest of candidates</li>
+      <li>- Color themed are used to separate each candidate</li>
+      <li>- Toal percentage adds up to 100%, let viewers know the data is from a trustworthy source which is from Pew Research Center</li>
+    </ul>
 
+    
+    <p><b>Part 2</b></p>
+    <a href="https://cloudfront.mediamatters.org/static/uploader/image/2013/10/28/welfare-jobs-ff-1.jpg">Bad/Misleading visualization</a>
+    <p>Why is this graph misleading?</p>
+    <ul>
+      <li>- The starting point of y-axis is incorrect which mislead the viewers</li>
+      <li>- There are no ticks on the axis to guide the viewer</li>
+      <li>- Bad color scheme used</li>
+    </ul>
+    <a href="https://vizhub.com/DatFob/7aef84585b564756969a178ea7b7ef8e">A better visualization made in d3</a>
+    <p>Why this graph is much better</p>
+    <ul>
+      <li>- Using a clean, calm color theme</li>
+      <li>- Using a correct, related title</li>
+      <li>- Fixed axis to start at 0 </li>
+    </ul>
+    <P><b>Part 3</b></P>
+    <p>Why this visualization is bad</p>
+    <ul>
+      <li>- Color theme same for all countries</li>
+      <li>- Title not clear, direct</li>
+      <li>- Axis not starting at 0, leading to viewers believe that Germany has many more times of covid cases than U.S.A</li>
+      <li>- Axis no title</li>
+      <li>- Cannot tell how many cases a country has, no annotation</li>
+    </ul>
+    <div id="bars"></div>
+   
+  </body>
+  <p>Why this visualization is better</p>
+  <ul>
+    <li>- Clear, easy to understand color theme for all countries</li>
+    <li>- Clear, direct title with no intention of misleading</li>
+    <li>- Shows that all countries are almost equal, rather than the graph before which tries to mislead users to believe Germany has crazy amount of cases</li>
+    <li>- Annotations are used to show exact number of cases</li>
+  </ul>
+  <div id="donut_chart"></div>
+
+  <script src="donut_chart.js"></script>
+  <script src="bar_chart.js"></script>
 </html>
