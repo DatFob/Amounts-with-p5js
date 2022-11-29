@@ -13,6 +13,26 @@ const svg3 = d3.select('#two_viz')
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
+
+
+  var ordinal = d3.scaleOrdinal()
+  .domain([ "Kevin Durant", "Kobe Bryant", "Lebron James","Jeremy Lin"])
+  .range([ "#007AC1","#552583", "#98002E",  "#F58426"]);
+
+
+svg3.append("g")
+  .attr("class", "legendOrdinal")
+  .attr("transform", "translate(550,10)");
+
+var legendOrdinal = d3.legendColor()
+  .shape("path", d3.symbol().type(d3.symbolTriangle).size(150)())
+  .shapePadding(10)
+  .cellFilter(function(d){ return d.label !== "e" })
+  .scale(ordinal);
+
+svg3.select(".legendOrdinal")
+  .call(legendOrdinal);
+
 svg3.append("text")
 	.text("Competing with Stars Chart")
 	.attr("x", 250)
@@ -87,6 +107,7 @@ const drawPlayer = data => {
   
   g.append("g")
   .attr("transform", "translate(50,410)")
+  .style("font", "18px times")
   .call(d3.axisBottom(xScale));
 
   g.append("g")
