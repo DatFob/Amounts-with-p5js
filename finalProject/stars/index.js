@@ -1,5 +1,5 @@
 
-const width = 600;
+const width = 800;
 const height = 500;
 const margin = {top:50, right:40, bottom:40, left:50};
 const innerWidth = width - margin.left - margin.right;
@@ -22,7 +22,7 @@ const svg3 = d3.select('#two_viz')
 
 svg3.append("g")
   .attr("class", "legendOrdinal")
-  .attr("transform", "translate(550,10)");
+  .attr("transform", "translate(600,20)");
 
 var legendOrdinal = d3.legendColor()
   .shape("path", d3.symbol().type(d3.symbolTriangle).size(150)())
@@ -126,8 +126,8 @@ const drawPlayer = data => {
         svg3.append("text")
         .attr("id","ptText")
         .text(object.player + " " + points + " points")
-        .attr("x", 450)
-        .attr("y", 150);
+        .attr("x", width - 200)
+        .attr("y", 180);
 
         let link = ""
         if(object.player == "Kobe Bryant"){
@@ -165,8 +165,8 @@ const drawPlayer = data => {
           svg3.append("text")
           .attr("id","ptText")
           .text(object.player + " " + rebounds + " rebounds")
-          .attr("x", 450)
-          .attr("y", 150);
+          .attr("x", width - 200)
+          .attr("y", 180);
           let link = ""
           if(object.player == "Kobe Bryant"){
             link = 'https://pbs.twimg.com/media/EPO2F1CX4AEPIVk.jpg'
@@ -204,8 +204,8 @@ const drawPlayer = data => {
         svg3.append("text")
         .attr("id","ptText")
         .text(object.player + " " + assist + " assists")
-        .attr("x", 450)
-        .attr("y", 150);
+        .attr("x", width - 200)
+        .attr("y", 180);
 
         let link = ""
         if(object.player == "Kobe Bryant"){
@@ -244,8 +244,8 @@ const drawPlayer = data => {
         svg3.append("text")
         .attr("id","ptText")
         .text(object.player + " " + efficiency + " efficiency rating")
-        .attr("x", 450)
-        .attr("y", 150);
+        .attr("x", width - 250)
+        .attr("y", 180);
 
         let link = ""
         if(object.player == "Kobe Bryant"){
