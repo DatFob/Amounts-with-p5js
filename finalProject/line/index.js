@@ -56,8 +56,8 @@ svg.append("g")
 var square = svg.append("rect")
     .attr("height", 20)
     .attr("width", 20)
-    .attr("x", width - 100)
-    .attr("y", 50)
+    .attr("x", width - 130)
+    .attr("y", 33)
     .attr("fill", knicksBlue)
     .on("click", function(){
     	update(data1);
@@ -66,8 +66,8 @@ var square = svg.append("rect")
 var square = svg.append("rect")
     .attr("height", 20)
     .attr("width", 20)
-    .attr("x", width - 100)
-    .attr("y", 110)
+    .attr("x", width - 130)
+    .attr("y", 93)
     .attr("fill", knicksOrange)
     .on("click", function(){
     	update(data2);
@@ -82,6 +82,7 @@ svg.append("text")
   .text("Klout Score")
   .attr("x", width - 100)
   .attr("y",110);
+
 
 
 // Create a function that takes a dataset as input and update the plot:
@@ -132,8 +133,8 @@ function update(data) {
     .append("path")
     .attr("class","lineTest")
     .attr("fill", "none")
-    .attr("stroke", "url(#line-gradient)" )
-    .attr("stroke-width", 5)
+    .attr("stroke", "red" )
+    .attr("stroke-width", 3)
     .merge(u)
     .transition()
     .duration(3000)
