@@ -1,7 +1,7 @@
 var w = 960, h = 500;
     
 var radius = 25;
-var color = d3.scaleOrdinal(["blue", "green", "grey", "#F58426"]);
+var color = d3.scaleOrdinal(d3.schemeCategory10);
 var centerScale = d3.scalePoint().padding(1).range([0, w]);
 var forceStrength = 0.05;
 
@@ -66,7 +66,7 @@ d3.csv("bubbles/data.csv",  function(d) {
           	.attr("id", "moneyText")
             .attr("x", 550)
             .attr("y", 50)
-            .text("$" + i.Salary)
+            .text("$" + d.Salary)
             .style("font-size", "26px");
         
    			})
@@ -74,7 +74,7 @@ d3.csv("bubbles/data.csv",  function(d) {
         		d3.select("#moneyText").remove();
    			 });
 
-  for(let i = 0; i < 4;i++){
+  for(let i = 0; i < 9;i++){
     let rotate = 50 + colorCount * 40
     svg2.append("path")
     .attr("transform", "translate(100,"+rotate+")")
@@ -92,8 +92,8 @@ d3.csv("bubbles/data.csv",  function(d) {
     .attr("y", 60 + colorCount * 40)
     .text(function(d) { return data[i].playerName; })
     .style("font-size", "26px")
-      .attr('fill', color(colorCount) )
-      .style('fill', 'darkOrange');
+      .attr('fill', color(data[i].ID))
+      .style('fill', color(data[i].ID));
   	colorCount += 1;
     
     
@@ -102,8 +102,6 @@ d3.csv("bubbles/data.csv",  function(d) {
       circles = circles.merge(circlesEnter)
       
       function ticked() {
-        //console.log("tick")
-        //console.log(data.map(function(d){ return d.x; }));
         circles
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
@@ -113,25 +111,21 @@ d3.csv("bubbles/data.csv",  function(d) {
             .nodes(data)
             .on("tick", ticked);
 
-    
-      function dragstarted() {
-        d3.select(this).attr("stroke", "black");
-      }
-    
-      function dragged(event, d) {
-        d3.select(this).raise().attr("cx", d.x = event.x).attr("cy", d.y = event.y);
-      }
-    
-      function dragended() {
-        d3.select(this).attr("stroke", null);
-      }
-
-      function drag(event,d) {
-        d.x = event.x;
-        d.y = event.y;
-        d3.select(this).raise().attr("transform", d=> "translate("+[d.x,d.y]+")" )
-      }
-
+            function dragstarted(d) {
+              if (!d3.event.active) simulation.alphaTarget(.03).restart();
+              d.fx = d.x;
+              d.fy = d.y;
+            
+            }
+            function dragged(d) {
+              d.fx = d3.event.x;
+              d.fy = d3.event.y;
+            }
+            function dragended(d) {
+              if (!d3.event.active) simulation.alphaTarget(.03);
+              d.fx = null;
+              d.fy = null;
+            }
       
     })}
 
