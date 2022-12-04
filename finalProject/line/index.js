@@ -29,7 +29,7 @@ var data2 = [
 
 var svg = d3.select("#my_dataviz")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
+    .attr("width", width + margin.left + margin.right + 40)
     .attr("height", height + margin.top + margin.bottom + 300)
   .append("g")
     .attr("transform",
@@ -147,6 +147,7 @@ function update(data) {
     var x = d3.scaleLinear().range([0,width]);
     var xAxis = d3.axisBottom().scale(x);
     svg.append("g")
+      .style("font", "32px times")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","myXaxis")
     x.domain([0, d3.max(data, function(d) { return d.day }) ]);
