@@ -101,7 +101,8 @@ function update(data) {
     .transition()
     .duration(3000)
     .call(yAxis)
-    .style('fill', 'darkBlue');
+    .style('fill', 'darkBlue')
+    .style("font", "20px times");
     
     //initialize a time x axis:
     var xScale = d3.scaleTime().domain(domain).range([0, width]);
@@ -111,7 +112,8 @@ function update(data) {
     .transition()
   	.duration(3000)
     .call(xYearAxis)
-    .style('fill', 'darkBlue');
+    .style('fill', 'darkBlue')
+    .style("font", "20px times");
     
       svg.append("linearGradient")
       .attr("id", "line-gradient")
@@ -147,7 +149,7 @@ function update(data) {
     var x = d3.scaleLinear().range([0,width]);
     var xAxis = d3.axisBottom().scale(x);
     svg.append("g")
-      .style("font", "32px times")
+      .style("font", "20px times")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","myXaxis")
     x.domain([0, d3.max(data, function(d) { return d.day }) ]);
@@ -158,7 +160,8 @@ function update(data) {
     .transition()
     .duration(3000)
     .call(yAxis)
-	.style('fill', 'darkOrange');
+	.style('fill', 'darkOrange')
+  .style("font", "20px times");
     
   	svg.selectAll(".myXaxis").transition()
     .duration(3000)
