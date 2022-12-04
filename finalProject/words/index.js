@@ -1,5 +1,6 @@
 var myWords = ["Jeremy Lin", "Insane", "NBA", "Baller", "Genius", "Harvard", "infinity", "beyond", "all in", "Ball-Lin", "Nothing Is Linpossible"
-              , "Lindubitably", "Linstallment", "Linternational", "Lintelligence", "dimer", "3-pt Shooter", "Giant Slasher"]
+              , "Lindubitably", "Linstallment", "Linternational", "Lintelligence", "dimer", "3-pt Shooter", "Giant Slasher",
+            "Lincredible", "The Knicks", "Rising Star"]
 
 
 // append the svg object to the body of the page
