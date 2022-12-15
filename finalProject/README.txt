@@ -1,37 +1,16 @@
-Story by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Linsanity
 
+Technology Stack:
+d3.js
+javaScript
+HTML & CSS 
+Python
+Tableau
 
-Say hello to Story, a brand new responsive one-pager for HTML5 UP! Inspired by my work
-on Carrd*, Story is built to be extremely modular and tweakable, and as such is entirely
-built on reusable, insanely customizable elements (like "spotlight" and "gallery") that
-can be endlessly duplicated and tweaked into whatever you need to tell your story --
-without, in many cases, touching *any* CSS. Check out index-demo.html for an interactive
-demo, and index.html for the actual template. Enjoy!
+Linsanity is a data visualization project created to emphasize on Jeremy Lin's shocking performance during his NBA seasons with the New York Knicks. The project uses d3.js to use number to present Jeremy Lin's talent and performance along with interactive visualizations for viewers to explore. 
 
-Demo images** courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+The Tabeau & Data Gathering folder contains source code for data gathering using Python through NBA API. The Tableau workbook separates into two, one represents 2010 - 2011 and the other one represents 2011-2012 season. 
 
-PS: Delete index-demo.html and assets/js/demo.js when you're done messing with the demo
-as neither are needed in production :)
+d3.js source code uses version 4. Each individual visualization is stored in its own directory. The homepage index.html references each source code file as a script.
 
-(* = my other side project -- carrd.co)
-(** = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+MIT license.
